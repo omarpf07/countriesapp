@@ -1,0 +1,19 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h5>Region: <small>{{activeRegion | titlecase}}</small></h5>
+
+    <h5>Select a Region</h5>
+
+    <div class="row">
+        <div class="col">
+            <button *ngFor="let region of regions" [class]="getActiveClass(region)" (click)="activateRegion(region)"
+                [style.marginRight.px]="5">{{
+                region | titlecase}}</button>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="countries.length > 0">
+        <div class="col">
+            <app-country-table [countries]="countries"></app-country-table>
+        </div>
+    </div>
+</div>
